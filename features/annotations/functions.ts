@@ -30,7 +30,13 @@ const forecast = {
   weather: "Sunny",
 }
 
-const logWeather = ({ date, weather }: { date: Date; weather: String }): void => {
+const logWeather = ({
+  date,
+  weather,
+}: {
+  date: Date
+  weather: String
+}): void => {
   console.log(date)
   console.log(weather)
 }

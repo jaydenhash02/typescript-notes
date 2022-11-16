@@ -63,3 +63,5 @@ for (let num of numbers) {
     numberAboveZero = num
   }
 }
+
+export {}
