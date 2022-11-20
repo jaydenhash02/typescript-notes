@@ -1,8 +1,14 @@
-import { User } from "./user";
-import { Company } from "./Company";
+// install type definition file
+// tells typescript that there will be a global variable called google
+// npm install @types/google.maps
+
+import { User } from "./user"
+import { Company } from "./Company"
+import { CustomMap } from "./CustomMap"
 
 const user = new User()
 const company = new Company()
+const customMap = new CustomMap("map")
 
-console.log(user)
-console.log(company)
+customMap.addMarker(user)
+customMap.addMarker(company)
