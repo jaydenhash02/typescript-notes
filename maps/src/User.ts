@@ -2,8 +2,6 @@ import { faker } from "@faker-js/faker"
 // .d.ts is a type definition file
 // Capital name to create and export as a class
 
-export default "red"
-
 // export it so other files can use it
 export class User {
   // havent initialised these variables yet
@@ -19,6 +17,10 @@ export class User {
       lat: parseFloat(faker.address.latitude()),
       lng: parseFloat(faker.address.longitude()),
     }
+  }
+  
+  markerContent(): string {
+    return `User Name: ${this.name}`
   }
 }
 

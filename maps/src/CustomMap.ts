@@ -5,6 +5,7 @@ interface Mappable {
     lat: number
     lng: number
   }
+  markerContent(): string
 }
 
 export class CustomMap {
@@ -27,16 +28,22 @@ export class CustomMap {
     )
   }
 
-  // can send in either user or company
+  // must contain the object location within interface Mappable
   addMarker(mappable: Mappable): void {
-    mappable.location.lat
-
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: mappable.location.lat,
         lng: mappable.location.lng,
       },
+    })
+
+    marker.addListener("click", () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: "Hi there!",
+      })
+
+      infoWindow.open(this.googleMap, marker)
     })
   }
 }
